@@ -9,7 +9,7 @@ position = { x = 750, y = 600 }
 padding = { x = 20, y = 36 }
 dynamic_padding = true
 decorations = "Transparent"
-opacity = 0.90
+opacity = 0.87
 blur = true
 
 
