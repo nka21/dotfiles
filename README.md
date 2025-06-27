@@ -1,8 +1,7 @@
 # dotfiles
-## Package Manager `brew` for MacOS
+## Package Manager for MacOS / `brew`
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-## Terminal
-Alacritty - [themes](https://github.com/alacritty/alacritty-theme)  
-Alacritty - [config](https://alacritty.org/config-alacritty.html)
+## Terminal / `Alacritty`
+[themes_repository](https://github.com/alacritty/alacritty-theme) / [config_document](https://alacritty.org/config-alacritty.html)
