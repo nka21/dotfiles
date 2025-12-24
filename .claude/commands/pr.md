@@ -3,7 +3,7 @@ name: pr
 description: PRを作成（日本語）
 ---
 
-Review current branch changes and create a PR.
+Review current branch changes and create a PR **as draft**.
 
 If a PR template exists in the project, follow it.
 Otherwise, use the format below.
