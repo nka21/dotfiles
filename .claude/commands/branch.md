@@ -3,12 +3,12 @@ name: branch
 description: ブランチ名を提案して作成
 ---
 
-作業内容を聞いて、適切なブランチ名を3つ提案して。
+Ask about the task and suggest 3 appropriate branch names.
 
-命名規則:
-- プレフィックス: feat/fix/refactor/docs/chore/test
-- 形式: {prefix}/{具体的な内容をケバブケース}
-- 例: feat/user-auth, fix/login-error, refactor/api-client
+Naming convention:
+- Prefix: feat/fix/refactor/docs/chore/test
+- Format: {prefix}/{specific-content-in-kebab-case}
+- Examples: feat/user-auth, fix/login-error, refactor/api-client
 
-選択されたらそのブランチを作成して。
+Create the selected branch.
 

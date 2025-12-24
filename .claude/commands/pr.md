@@ -1,16 +1,21 @@
 ---
 name: pr
-description: PRを作成
+description: PRを作成（日本語）
 ---
 
-現在のブランチの変更内容を確認して、日本語でシンプルなPRを作成して。
+Review current branch changes and create a PR.
+
+If a PR template exists in the project, follow it.
+Otherwise, use the format below.
+
+**Write all content in Japanese.**
 
 ## What
-何を変更したか、簡潔に2-3行で。
+変更内容を簡潔に
 
 ## Why
-なぜこの変更が必要か、2-3行で。
+変更理由
 
 ## Notes
-レビュー時に注意してほしい点があれば書く（なければセクションごと削除）。
+レビュー時の注意点（不要なら削除）
 

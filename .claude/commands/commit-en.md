@@ -1,6 +1,6 @@
 ---
-name: commit
-description: 変更をコミット（日本語、Conventional Commits準拠）
+name: commit-en
+description: 変更をコミット（英語、Conventional Commits準拠）
 ---
 
 Review current changes and create a commit following Conventional Commits.
@@ -16,7 +16,7 @@ Conventional Commits v1.0.0
 
 Format: `type(scope): description`
 - scope: optional (e.g., `alacritty`, `vim`, `git`)
-- **description: in Japanese** (e.g., `feat(alacritty): 透明度設定を追加`)
+- **description: in English** (e.g., `feat(alacritty): add opacity configuration`)
 
 Types:
 - `feat`: new feature
@@ -33,4 +33,3 @@ Required footer:
 ```
 Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
 ```
-
