@@ -24,6 +24,7 @@ ln -sf "$DOTFILES_DIR/.claude/commands" ~/.claude/commands
 # Symlink .config subdirectories
 ln -sf "$DOTFILES_DIR/mise/config.toml" ~/.config/mise/config.toml
 ln -sf "$DOTFILES_DIR/aqua/aqua.yaml" ~/.config/aqua/aqua.yaml
+ln -sf "$DOTFILES_DIR/aqua/aqua-checksums.json" ~/.config/aqua/aqua-checksums.json
 ln -sf "$DOTFILES_DIR/aqua/imports" ~/.config/aqua/imports
 ln -sf "$DOTFILES_DIR/ghostty/config" ~/.config/ghostty/config
 
@@ -37,5 +38,6 @@ echo "  ~/.claude/CLAUDE.md -> $DOTFILES_DIR/.claude/CLAUDE.md"
 echo "  ~/.claude/commands -> $DOTFILES_DIR/.claude/commands"
 echo "  ~/.config/mise/config.toml -> $DOTFILES_DIR/mise/config.toml"
 echo "  ~/.config/aqua/aqua.yaml -> $DOTFILES_DIR/aqua/aqua.yaml"
+echo "  ~/.config/aqua/aqua-checksums.json -> $DOTFILES_DIR/aqua/aqua-checksums.json"
 echo "  ~/.config/aqua/imports -> $DOTFILES_DIR/aqua/imports"
 echo "  ~/.config/ghostty/config -> $DOTFILES_DIR/ghostty/config"
