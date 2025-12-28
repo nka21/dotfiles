@@ -22,7 +22,6 @@ ln -sf "$DOTFILES_DIR/.claude/CLAUDE.md" ~/.claude/CLAUDE.md
 ln -sf "$DOTFILES_DIR/.claude/commands" ~/.claude/commands
 
 # Symlink .config subdirectories
-ln -sf "$DOTFILES_DIR/alacritty" ~/.config/alacritty
 ln -sf "$DOTFILES_DIR/mise/config.toml" ~/.config/mise/config.toml
 ln -sf "$DOTFILES_DIR/aqua/aqua.yaml" ~/.config/aqua/aqua.yaml
 ln -sf "$DOTFILES_DIR/aqua/imports" ~/.config/aqua/imports
@@ -36,7 +35,6 @@ echo "  ~/.zshrc -> $DOTFILES_DIR/.zshrc"
 echo "  ~/.zprofile -> $DOTFILES_DIR/.zprofile"
 echo "  ~/.claude/CLAUDE.md -> $DOTFILES_DIR/.claude/CLAUDE.md"
 echo "  ~/.claude/commands -> $DOTFILES_DIR/.claude/commands"
-echo "  ~/.config/alacritty -> $DOTFILES_DIR/alacritty"
 echo "  ~/.config/mise/config.toml -> $DOTFILES_DIR/mise/config.toml"
 echo "  ~/.config/aqua/aqua.yaml -> $DOTFILES_DIR/aqua/aqua.yaml"
 echo "  ~/.config/aqua/imports -> $DOTFILES_DIR/aqua/imports"
