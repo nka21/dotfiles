@@ -9,6 +9,7 @@ echo "Setting up dotfiles..."
 # Create directories if not exist
 mkdir -p ~/.config/mise
 mkdir -p ~/.config/aqua
+mkdir -p ~/.config/ghostty
 mkdir -p ~/.claude
 
 # Symlink home directory files
@@ -25,6 +26,7 @@ ln -sf "$DOTFILES_DIR/alacritty" ~/.config/alacritty
 ln -sf "$DOTFILES_DIR/mise/config.toml" ~/.config/mise/config.toml
 ln -sf "$DOTFILES_DIR/aqua/aqua.yaml" ~/.config/aqua/aqua.yaml
 ln -sf "$DOTFILES_DIR/aqua/imports" ~/.config/aqua/imports
+ln -sf "$DOTFILES_DIR/ghostty/config" ~/.config/ghostty/config
 
 echo "Dotfiles setup complete!"
 echo ""
@@ -38,3 +40,4 @@ echo "  ~/.config/alacritty -> $DOTFILES_DIR/alacritty"
 echo "  ~/.config/mise/config.toml -> $DOTFILES_DIR/mise/config.toml"
 echo "  ~/.config/aqua/aqua.yaml -> $DOTFILES_DIR/aqua/aqua.yaml"
 echo "  ~/.config/aqua/imports -> $DOTFILES_DIR/aqua/imports"
+echo "  ~/.config/ghostty/config -> $DOTFILES_DIR/ghostty/config"

@@ -1,0 +1,33 @@
+## Theme
+theme = NordFox
+font-family = Hack Nerd Font Mono
+font-size = 13
+font-thicken = true
+
+# 行間
+adjust-cell-height = 8%
+
+
+## Background
+background-opacity = 0.9
+background-blur = true
+
+
+## Window
+window-padding-x = 20
+window-padding-y = 36
+window-padding-balance
+unfocused-split-opacity = 0.5
+
+# Window size
+window-height = 27
+window-width = 105
+
+# カーソルの透過度
+cursor-opacity = 0.7
+
+# macOSのタイトルバーにプロキシアイコンを表示
+macos-titlebar-proxy-icon = hidden
+title = " "
+
+keybind = shift+enter=text:\x1b\r\n'"%# "

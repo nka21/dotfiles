@@ -1,6 +1,8 @@
-# プロンプトのカスタマイズ
+# ===== プロンプト設定 =====
+# 対話的シェル起動時に毎回読み込まれる
+
 precmd() {
-    # 現在のGitブランチ名を取得
+    # Gitブランチ名を取得して表示
     CURRENT_BRANCH=$(git branch --show-current 2>/dev/null)
     if [ -n "$CURRENT_BRANCH" ]; then
         CURRENT_BRANCH_TEXT=" (%F{blue}${CURRENT_BRANCH}%f)"
@@ -8,7 +10,7 @@ precmd() {
         unset CURRENT_BRANCH_TEXT
     fi
 
-    # 仮想環境の名前を取得
+    # Python仮想環境名を取得して表示
     if [ -n "$VIRTUAL_ENV" ]; then
         VENV_NAME=$(basename "$VIRTUAL_ENV")
         VENV_TEXT="(%F{yellow}${VENV_NAME}%f) "
@@ -16,20 +18,41 @@ precmd() {
         VENV_TEXT=""
     fi
 
-    # プロンプトを設定
+    # プロンプト: (venv) user: ~/path (branch)
     PS1="$VENV_TEXT%F{green}%n%f: %F{magenta}%~%f$CURRENT_BRANCH_TEXT"$'\n'"%# "
 }
 
-# ===== エイリアス設定 =====
-# eza
-alias ls="eza"
+# ===== エイリアス =====
 
-# 42Tokyo
+# 標準コマンドをモダンツールに置き換え
+alias ls="eza -l --git --icons"
+alias ll="eza -la --git --icons"
+alias cat="bat"
+
+# 42Tokyo - コンパイラフラグ・Norminette
 alias wcc="cc -Wall -Wextra -Werror"
 alias wg++="g++ -Wall -Wextra -Werror"
 alias norm="norminette -R CheckDefine"
+alias francinette=/Users/naoki/francinette/tester.sh
+alias paco=/Users/naoki/francinette/tester.sh
 
-# AtCoder CLIのエイリアス
+# GitHub - リポジトリをブラウザで開く
+alias ghb='gh repo view --web $(ghq list | peco)'
+
+# GitHub Actions - バージョン固定ツール
+alias pinact='go run github.com/suzuki-shunsuke/pinact/cmd/pinact@latest run'
+
+# ===== 関数 =====
+
+# g - ghq管理リポジトリに移動（pecoで選択）
+g() {
+    local selected=$(ghq list | peco)
+    if [ -n "$selected" ]; then
+        cd "$(ghq root)/$selected"
+    fi
+}
+
+# acc - AtCoder CLI拡張（acc sy で確認なし提出）
 acc() {
     if [ "$1" = "sy" ]; then
         shift
@@ -39,11 +62,7 @@ acc() {
     fi
 }
 
-# ===== オプション設定 =====
-# ビープ音を無効化
-setopt no_beep
-
-# manのカラー化
+# man - マニュアルのカラー表示
 man() {
     env GROFF_NO_SGR=1 LESS_TERMCAP_mb=$'\E[01;31m' \
     LESS_TERMCAP_md=$'\E[01;38;5;74m' \
@@ -54,3 +73,8 @@ man() {
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
 }
+
+# ===== オプション =====
+
+# ビープ音を無効化
+setopt no_beep
