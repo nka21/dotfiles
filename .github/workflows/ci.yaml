@@ -51,7 +51,7 @@ jobs:
           private-key: ${{ secrets.BOT_PRIVATE_KEY }}
 
       - name: Run actionlint
-        uses: reviewdog/action-actionlint@0b89ab5ea641e80701bca20b11cb99b7fdf8c1ea # v1.59.0
+        uses: reviewdog/action-actionlint@053c5cf55eed0ced1367cdc5e658df41db3a0cce # v1.59.0
         with:
           github_token: ${{ steps.bot.outputs.token }}
 
