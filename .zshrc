@@ -42,6 +42,9 @@ alias ghb='gh repo view --web $(ghq list | peco)'
 # GitHub Actions - バージョン固定ツール
 alias pinact='go run github.com/suzuki-shunsuke/pinact/cmd/pinact@latest run'
 
+# ghq + fzf - リポジトリ移動widget起動
+alias repo='ghq-fzf-widget'
+
 # ===== 関数 =====
 
 # g - ghq管理リポジトリに移動（pecoで選択）
@@ -49,6 +52,22 @@ g() {
     local selected=$(ghq list | peco)
     if [ -n "$selected" ]; then
         cd "$(ghq root)/$selected"
+    fi
+}
+
+# ghq-fzf-widget - ghq + fzfでリポジトリ移動（プレビュー付き）
+ghq-fzf-widget() {
+    local src
+    src=$(
+        ghq list | fzf \
+            --reverse \
+            --ansi \
+            --preview-window=right:50%:wrap \
+            --preview "eza -la --git --icons --color=always --no-permissions --no-user --no-time --no-filesize $(ghq root)/{}"
+    ) || return
+
+    if [[ -n "$src" ]]; then
+        cd "$(ghq root)/$src"
     fi
 }
 
