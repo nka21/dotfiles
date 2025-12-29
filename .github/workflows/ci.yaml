@@ -71,6 +71,7 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.bot.outputs.token }}
           BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
+          REPOSITORY: ${{ github.repository }}
         run: |
           pinact run
           if git diff --quiet; then
@@ -80,4 +81,5 @@ jobs:
 
           git add .github/workflows/
           git commit -m "chore(ci): pin GitHub Actions to commit SHA"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${REPOSITORY}"
           git push origin "HEAD:${BRANCH_NAME}"
