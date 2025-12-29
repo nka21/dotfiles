@@ -2,15 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
 
-  // 監視対象ファイルを明示的に指定
-  "includePaths": [
-    "aqua/aqua.yaml",
-    "sheldon/plugins.toml"
-  ],
-
-  // 有効化するマネージャー
-  "enabledManagers": ["aqua", "git-submodules"],
-
   // 自動マージ設定
   "platformAutomerge": true,
   "automerge": true,
