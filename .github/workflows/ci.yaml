@@ -20,16 +20,21 @@ jobs:
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup aqua
+        uses: aquaproj/aqua-installer@11dd79b4e498d471a9385aa9fb7f62bb5f52a73c # v4.0.4
+        with:
+          aqua_version: v2.56.1
+
+      - name: Install security tools
+        run: aqua i -l gitleaks zizmor
 
       - name: Run Gitleaks
-        uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2.3.9
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gitleaks detect --source . --verbose
 
       - name: Run Zizmor
-        uses: zizmorcore/zizmor@a5e304f536f1ba836aba0b966eb459f99f1658c1 # v1.19.0
-        with:
-          input: .github/workflows/
+        run: zizmor .github/workflows/
 
   actions-quality:
     name: Actions Quality Checks
@@ -42,6 +47,18 @@ jobs:
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup aqua
+        uses: aquaproj/aqua-installer@11dd79b4e498d471a9385aa9fb7f62bb5f52a73c # v4.0.4
+        with:
+          aqua_version: v2.56.1
+
+      - name: Install actions tools
+        run: aqua i -l actionlint pinact
+
+      - name: Run actionlint
+        run: actionlint
 
       - name: Setup Git Bot
         id: bot
@@ -50,24 +67,11 @@ jobs:
           app-id: ${{ secrets.BOT_APP_ID }}
           private-key: ${{ secrets.BOT_PRIVATE_KEY }}
 
-      - name: Run actionlint
-        uses: reviewdog/action-actionlint@0b89ab5ea641e80701bca20b11cb99b7fdf8c1ea # v1.59.0
-        with:
-          github_token: ${{ steps.bot.outputs.token }}
-
-      - name: Setup aqua
-        uses: aquaproj/aqua-installer@6ce1f8848ec8e61f14d57bd5d7597057a6dd187c # v3.0.1
-        with:
-          aqua_version: v2.40.3
-
-      - name: Install pinact
-        run: aqua g -i suzuki-shunsuke/pinact
-
       - name: Run pinact and auto-fix
         env:
           GH_TOKEN: ${{ steps.bot.outputs.token }}
         run: |
-          pinact run .github/workflows/
+          pinact run
           if git diff --quiet; then
             echo "No changes needed"
             exit 0

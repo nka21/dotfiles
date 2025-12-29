@@ -46,6 +46,31 @@
       "algorithm": "sha256"
     },
     {
+      "id": "github_release/github.com/gitleaks/gitleaks/v8.30.0/gitleaks_8.30.0_darwin_arm64.tar.gz",
+      "checksum": "B251AB2BCD4CD8BA9E56FF37698C033EBF38582B477D21EBD86586D927CF87E7",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/gitleaks/gitleaks/v8.30.0/gitleaks_8.30.0_darwin_x64.tar.gz",
+      "checksum": "CA221D012D247080C2F6F61F4B7A83BFFA2453806B0C195C795BBE9A8C775ED5",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/gitleaks/gitleaks/v8.30.0/gitleaks_8.30.0_linux_arm64.tar.gz",
+      "checksum": "B4CBBB6DDF7D1B2A603088CD03A4E3F7CE48EE7FD449B51F7DE6EE2906F5FA2F",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/gitleaks/gitleaks/v8.30.0/gitleaks_8.30.0_linux_x64.tar.gz",
+      "checksum": "79A3AB579B53F71EFD634F3AAF7E04A0FA0CF206B7ED434638D1547A2470A66E",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/gitleaks/gitleaks/v8.30.0/gitleaks_8.30.0_windows_x64.zip",
+      "checksum": "54FE94F644B832DD08E8C3A5915EFB3BFA862386D59FB27CA0792CB687A83573",
+      "algorithm": "sha256"
+    },
+    {
       "id": "github_release/github.com/junegunn/fzf/v0.67.0/fzf-0.67.0-darwin_amd64.tar.gz",
       "checksum": "88DC853E0914793A2E7BE0D1ACFE6C922D9CCAD08E3302DF092399775B0279FF",
       "algorithm": "sha256"
@@ -106,6 +131,36 @@
       "algorithm": "sha256"
     },
     {
+      "id": "github_release/github.com/rhysd/actionlint/v1.7.9/actionlint_1.7.9_darwin_amd64.tar.gz",
+      "checksum": "F89A910E90E536F60DF7C504160247DB01DD67CAB6F08C064C1C397B76C91A79",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/rhysd/actionlint/v1.7.9/actionlint_1.7.9_darwin_arm64.tar.gz",
+      "checksum": "855E49E823FC68C6371FD6967E359CDE11912D8D44FED343283C8E6E943BD789",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/rhysd/actionlint/v1.7.9/actionlint_1.7.9_linux_amd64.tar.gz",
+      "checksum": "233B280D05E100837F4AF1433C7B40A5DCB306E3AA68FB4F17F8A7F45A7DF7B4",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/rhysd/actionlint/v1.7.9/actionlint_1.7.9_linux_arm64.tar.gz",
+      "checksum": "6B82A3B8C808BF1BCD39A95ACED22FC1A026EEF08EDE410F81E274AF8DEADBBC",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/rhysd/actionlint/v1.7.9/actionlint_1.7.9_windows_amd64.zip",
+      "checksum": "7C8B10A93723838BC3533F6E1886D868FDBB109B81606EBE6D1A533D11D8E978",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/rhysd/actionlint/v1.7.9/actionlint_1.7.9_windows_arm64.zip",
+      "checksum": "7ACA9BF09EEDF0A743E08C7CB9F1712467A7324A9342A029AE4536FB4BE95C25",
+      "algorithm": "sha256"
+    },
+    {
       "id": "github_release/github.com/rossmacarthur/sheldon/0.8.5/sheldon-0.8.5-aarch64-apple-darwin.tar.gz",
       "checksum": "6E47F10A25F165B095EB2BDE1AB617D4D34AD6F3FF2CA984167CA94FADD52730",
       "algorithm": "sha256"
@@ -146,6 +201,36 @@
       "algorithm": "sha256"
     },
     {
+      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.7.4/pinact_darwin_amd64.tar.gz",
+      "checksum": "D636D9E295EB26F6FB104ABC0F4A80778E169655EC0CD1457F353272DB446F15",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.7.4/pinact_darwin_arm64.tar.gz",
+      "checksum": "3C8B9546A44B32A8CBC4E2D573DA28EF99C8D70224B20E4A40E94472EFEF6754",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.7.4/pinact_linux_amd64.tar.gz",
+      "checksum": "DBBB251A6334BF06110D5365CFC9B1D6213472DF3BE34698ECB1FBEBA9FBCBA0",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.7.4/pinact_linux_arm64.tar.gz",
+      "checksum": "08F90BC25FA6E136F4269F3DAE1503BC5253AADB78221EE1A02C6CE904FD8C51",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.7.4/pinact_windows_amd64.zip",
+      "checksum": "801B5B30882DEAF6D342822A131D28752EDAB923DD4279D6B41781DEBB73D9D2",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/suzuki-shunsuke/pinact/v3.7.4/pinact_windows_arm64.zip",
+      "checksum": "2172D6FC9DF047BA88B36EF86DF10E8D261F5EEB6E739992E1867DF0869DE941",
+      "algorithm": "sha256"
+    },
+    {
       "id": "github_release/github.com/x-motemen/ghq/v1.8.0/ghq_darwin_amd64.zip",
       "checksum": "F50A794201BAC18DF1AC8D00E863E9635576AA94",
       "algorithm": "sha1"
@@ -174,6 +259,31 @@
       "id": "github_release/github.com/x-motemen/ghq/v1.8.0/ghq_windows_arm64.zip",
       "checksum": "D7B0E3C9C9A246C580B46D7E0EE47E9E6DEC26D6",
       "algorithm": "sha1"
+    },
+    {
+      "id": "github_release/github.com/zizmorcore/zizmor/v1.19.0/zizmor-aarch64-apple-darwin.tar.gz",
+      "checksum": "845E6CC1D5E38E513A8DF97AEEF2207EEA438008F8E5F27A03FDAA77FCCCF4CA",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/zizmorcore/zizmor/v1.19.0/zizmor-aarch64-unknown-linux-gnu.tar.gz",
+      "checksum": "605E291EF7D15FA520E536FCDD20C8715F70E63CD448A72ADB2CF190B9DA9042",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/zizmorcore/zizmor/v1.19.0/zizmor-x86_64-apple-darwin.tar.gz",
+      "checksum": "CAEBFA595FA2DB7538F3CBC1A512D2FF96E0274666EEDA12F6A42D3E59B30043",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/zizmorcore/zizmor/v1.19.0/zizmor-x86_64-pc-windows-msvc.zip",
+      "checksum": "D3C1A4A88953349A05F4B1CB5106537C26E23ED416CE3B56E1D0FDEDC75B9AAD",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/zizmorcore/zizmor/v1.19.0/zizmor-x86_64-unknown-linux-gnu.tar.gz",
+      "checksum": "64DD578889F4C2E277B084060EF47FD98F933723399AF9145AE2768AAE76A71C",
+      "algorithm": "sha256"
     },
     {
       "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.446.0/registry.yaml",
