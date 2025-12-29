@@ -4,12 +4,45 @@ set -e
 
 DOTFILES_DIR="$HOME/ghq/github.com/nkoji21/dotfiles"
 
-echo "Setting up dotfiles..."
+echo "========================================="
+echo "  Dotfiles Setup"
+echo "========================================="
+echo ""
+
+# Check Homebrew
+if ! command -v brew &> /dev/null; then
+    echo "Error: Homebrew is not installed."
+    echo "Please install Homebrew first:"
+    echo "  /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
+    exit 1
+fi
+
+echo "✓ Homebrew found"
+
+# Install mise if not installed
+if ! command -v mise &> /dev/null; then
+    echo "Installing mise..."
+    brew install mise
+else
+    echo "✓ mise found"
+fi
+
+# Install aqua if not installed
+if ! command -v aqua &> /dev/null; then
+    echo "Installing aqua..."
+    brew install aquaproj/aqua/aqua
+else
+    echo "✓ aqua found"
+fi
+
+echo ""
+echo "Creating symlinks..."
 
 # Create directories if not exist
 mkdir -p ~/.config/mise
 mkdir -p ~/.config/aqua
 mkdir -p ~/.config/ghostty
+mkdir -p ~/.config/sheldon
 mkdir -p ~/.claude
 
 # Symlink home directory files
@@ -27,17 +60,23 @@ ln -sf "$DOTFILES_DIR/aqua/aqua.yaml" ~/.config/aqua/aqua.yaml
 ln -sf "$DOTFILES_DIR/aqua/aqua-checksums.json" ~/.config/aqua/aqua-checksums.json
 ln -sf "$DOTFILES_DIR/aqua/imports" ~/.config/aqua/imports
 ln -sf "$DOTFILES_DIR/ghostty/config" ~/.config/ghostty/config
+ln -sf "$DOTFILES_DIR/sheldon/plugins.toml" ~/.config/sheldon/plugins.toml
 
-echo "Dotfiles setup complete!"
+echo "✓ Symlinks created"
+
+# Install tools
 echo ""
-echo "Installed symlinks:"
-echo "  ~/.gitconfig -> $DOTFILES_DIR/.gitconfig"
-echo "  ~/.zshrc -> $DOTFILES_DIR/.zshrc"
-echo "  ~/.zprofile -> $DOTFILES_DIR/.zprofile"
-echo "  ~/.claude/CLAUDE.md -> $DOTFILES_DIR/.claude/CLAUDE.md"
-echo "  ~/.claude/commands -> $DOTFILES_DIR/.claude/commands"
-echo "  ~/.config/mise/config.toml -> $DOTFILES_DIR/mise/config.toml"
-echo "  ~/.config/aqua/aqua.yaml -> $DOTFILES_DIR/aqua/aqua.yaml"
-echo "  ~/.config/aqua/aqua-checksums.json -> $DOTFILES_DIR/aqua/aqua-checksums.json"
-echo "  ~/.config/aqua/imports -> $DOTFILES_DIR/aqua/imports"
-echo "  ~/.config/ghostty/config -> $DOTFILES_DIR/ghostty/config"
+echo "Installing tools..."
+
+echo "Installing mise tools (go, node, pnpm, python)..."
+mise install
+
+echo "Installing aqua tools (gh, ghq, eza, bat, peco, act, sheldon)..."
+aqua install -a
+
+echo ""
+echo "========================================="
+echo "  Setup Complete!"
+echo "========================================="
+echo ""
+echo "Please restart your terminal."
