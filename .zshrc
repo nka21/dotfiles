@@ -43,7 +43,7 @@ alias pinact='go run github.com/suzuki-shunsuke/pinact/cmd/pinact@latest run'
 alias repo='ghq-fzf-widget'
 
 # ghq + fzf - リポジトリをブラウザで開く
-alias ghv='ghq-fzf-view'
+alias repov='ghq-fzf-view'
 
 # ===== 関数 =====
 
