@@ -101,6 +101,21 @@
       "algorithm": "sha256"
     },
     {
+      "id": "github_release/github.com/rossmacarthur/sheldon/0.8.5/sheldon-0.8.5-aarch64-apple-darwin.tar.gz",
+      "checksum": "6E47F10A25F165B095EB2BDE1AB617D4D34AD6F3FF2CA984167CA94FADD52730",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/rossmacarthur/sheldon/0.8.5/sheldon-0.8.5-aarch64-unknown-linux-musl.tar.gz",
+      "checksum": "1F6B792E49E259F7C313E9921C8D4AD638D827ABC2C023EFE0588A55678F9A3E",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/rossmacarthur/sheldon/0.8.5/sheldon-0.8.5-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "80AA0BE617072C278D67FD6C5FBCE4903D3801D78B6ABF8F058F0648D2242C78",
+      "algorithm": "sha256"
+    },
+    {
       "id": "github_release/github.com/sharkdp/bat/v0.26.1/bat-v0.26.1-aarch64-apple-darwin.tar.gz",
       "checksum": "E30BEFF26779C9BF60BB541E1D79046250CB74378F2757F8EB250AFDDB19E114",
       "algorithm": "sha256"

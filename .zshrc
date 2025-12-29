@@ -78,3 +78,8 @@ man() {
 
 # ビープ音を無効化
 setopt no_beep
+
+# ===== プラグイン =====
+
+# sheldon - zshプラグインマネージャー
+eval "$(sheldon source)"
