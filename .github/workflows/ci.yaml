@@ -71,7 +71,7 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.bot.outputs.token }}
         run: |
-          pinact run .github/workflows/
+          pinact run
           if git diff --quiet; then
             echo "No changes needed"
             exit 0
