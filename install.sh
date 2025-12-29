@@ -43,6 +43,7 @@ mkdir -p ~/.config/mise
 mkdir -p ~/.config/aqua
 mkdir -p ~/.config/ghostty
 mkdir -p ~/.config/sheldon
+mkdir -p ~/.local/share/sheldon
 mkdir -p ~/.claude
 
 # Symlink home directory files
@@ -61,6 +62,7 @@ ln -sf "$DOTFILES_DIR/aqua/aqua-checksums.json" ~/.config/aqua/aqua-checksums.js
 ln -sf "$DOTFILES_DIR/aqua/imports" ~/.config/aqua/imports
 ln -sf "$DOTFILES_DIR/ghostty/config" ~/.config/ghostty/config
 ln -sf "$DOTFILES_DIR/sheldon/plugins.toml" ~/.config/sheldon/plugins.toml
+ln -sf "$DOTFILES_DIR/sheldon/plugins.lock" ~/.local/share/sheldon/plugins.lock
 
 echo "✓ Symlinks created"
 

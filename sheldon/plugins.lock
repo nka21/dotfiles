@@ -1,0 +1,37 @@
+version = "0.8.5"
+home = "/Users/naoki"
+config_dir = "/Users/naoki/.config/sheldon"
+data_dir = "/Users/naoki/.local/share/sheldon"
+config_file = "/Users/naoki/.config/sheldon/plugins.toml"
+
+[[plugins]]
+name = "zsh-autosuggestions"
+source_dir = "/Users/naoki/.local/share/sheldon/repos/github.com/zsh-users/zsh-autosuggestions"
+files = ["/Users/naoki/.local/share/sheldon/repos/github.com/zsh-users/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"]
+apply = ["source"]
+
+[plugins.hooks]
+
+[[plugins]]
+name = "zsh-syntax-highlighting"
+source_dir = "/Users/naoki/.local/share/sheldon/repos/github.com/zsh-users/zsh-syntax-highlighting"
+files = ["/Users/naoki/.local/share/sheldon/repos/github.com/zsh-users/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"]
+apply = ["source"]
+
+[plugins.hooks]
+
+[[plugins]]
+name = "zsh-completions"
+source_dir = "/Users/naoki/.local/share/sheldon/repos/github.com/zsh-users/zsh-completions"
+files = ["/Users/naoki/.local/share/sheldon/repos/github.com/zsh-users/zsh-completions/zsh-completions.plugin.zsh"]
+apply = ["source"]
+
+[plugins.hooks]
+
+[templates]
+PATH = 'export PATH="{{ dir }}:$PATH"'
+path = 'path=( "{{ dir }}" $path )'
+fpath = 'fpath=( "{{ dir }}" $fpath )'
+source = """
+{{ hooks?.pre | nl }}{% for file in files %}source "{{ file }}"
+{% endfor %}{{ hooks?.post | nl }}"""
