@@ -36,9 +36,6 @@ alias norm="norminette -R CheckDefine"
 alias francinette=/Users/naoki/francinette/tester.sh
 alias paco=/Users/naoki/francinette/tester.sh
 
-# GitHub - リポジトリをブラウザで開く
-alias ghb='gh repo view --web $(ghq list | peco)'
-
 # GitHub Actions - バージョン固定ツール
 alias pinact='go run github.com/suzuki-shunsuke/pinact/cmd/pinact@latest run'
 
@@ -47,27 +44,30 @@ alias repo='ghq-fzf-widget'
 
 # ===== 関数 =====
 
-# g - ghq管理リポジトリに移動（pecoで選択）
-g() {
-    local selected=$(ghq list | peco)
-    if [ -n "$selected" ]; then
-        cd "$(ghq root)/$selected"
+# ghq-fzf-select - ghqリポジトリをfzfで選択（プレビュー付き）
+ghq-fzf-select() {
+    ghq list | fzf \
+        --reverse \
+        --ansi \
+        --preview-window=right:50%:wrap \
+        --preview "eza -la --git --icons --color=always --no-permissions --no-user --no-time --no-filesize $(ghq root)/{}"
+}
+
+# ghq-fzf-widget - ghqリポジトリに移動
+ghq-fzf-widget() {
+    local src
+    src=$(ghq-fzf-select) || return
+    if [[ -n "$src" ]]; then
+        cd "$(ghq root)/$src"
     fi
 }
 
-# ghq-fzf-widget - ghq + fzfでリポジトリ移動（プレビュー付き）
-ghq-fzf-widget() {
+# ghb - ghqリポジトリをブラウザで開く
+ghb() {
     local src
-    src=$(
-        ghq list | fzf \
-            --reverse \
-            --ansi \
-            --preview-window=right:50%:wrap \
-            --preview "eza -la --git --icons --color=always --no-permissions --no-user --no-time --no-filesize $(ghq root)/{}"
-    ) || return
-
+    src=$(ghq-fzf-select) || return
     if [[ -n "$src" ]]; then
-        cd "$(ghq root)/$src"
+        gh repo view --web "$src"
     fi
 }
 
@@ -78,6 +78,38 @@ acc() {
         acc submit -s -- -y "$@"
     else
         command acc "$@"
+    fi
+}
+
+# minify_video - 動画圧縮（完了後に元ファイル削除確認）
+minify_video() {
+    if [ -z "$1" ]; then
+        echo "Usage: minify_video <video_file>"
+        return 1
+    fi
+
+    local file_path=$1
+    local file_ext="${file_path##*.}"
+    local base_name=$(basename "$file_path" ".$file_ext")
+    local dir_path=$(dirname "$file_path")
+    local output_file="${dir_path}/${base_name}_minify.mp4"
+
+    echo "Compressing: $file_path"
+    echo "Output: $output_file"
+
+    if ffmpeg -i "$file_path" -vcodec libx264 -crf 23 "$output_file"; then
+        echo "\nCompression completed!"
+
+        read -q "REPLY?Delete original file? (y/N): "
+        echo
+
+        if [[ $REPLY == "y" ]]; then
+            rm "$file_path"
+            echo "%F{green}✓ Successfully deleted:%f $file_path"
+        fi
+    else
+        echo "Error: Compression failed"
+        return 1
     fi
 }
 

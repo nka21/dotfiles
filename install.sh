@@ -71,7 +71,7 @@ echo "Installing tools..."
 echo "Installing mise tools (go, node, pnpm, python)..."
 mise install
 
-echo "Installing aqua tools (gh, ghq, eza, bat, peco, act, sheldon)..."
+echo "Installing aqua tools (gh, ghq, eza, bat, fzf, act, sheldon)..."
 aqua install -a
 
 echo ""

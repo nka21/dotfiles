@@ -106,31 +106,6 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/peco/peco/v0.5.11/peco_darwin_amd64.zip",
-      "checksum": "C0A2C2F510DE5711AB23B0E07D3211E54CA4B4E6BFF6EAB7020037D9AC0E067D",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/peco/peco/v0.5.11/peco_darwin_arm64.zip",
-      "checksum": "D5317EF7964FBD24C877CB257C73B06D2BB91EFEC2C0C206082B83CBA45C9EBC",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/peco/peco/v0.5.11/peco_linux_amd64.tar.gz",
-      "checksum": "EC3C32A4950A6DBCA7AB79AE2EDFD9E28721AB3A0AEAB938A2147CCF77FD3BE2",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/peco/peco/v0.5.11/peco_linux_arm64.tar.gz",
-      "checksum": "69384496EF5A1F6566303CAF30F7BE6334F39DE1F42F9E0EE2BF327F8123ECF6",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/peco/peco/v0.5.11/peco_windows_amd64.zip",
-      "checksum": "BD0F92CF415F43B9FE19515D8C49B31683826CF3626B485217E6487D3635C95D",
-      "algorithm": "sha256"
-    },
-    {
       "id": "github_release/github.com/rossmacarthur/sheldon/0.8.5/sheldon-0.8.5-aarch64-apple-darwin.tar.gz",
       "checksum": "6E47F10A25F165B095EB2BDE1AB617D4D34AD6F3FF2CA984167CA94FADD52730",
       "algorithm": "sha256"
