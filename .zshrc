@@ -27,7 +27,7 @@ precmd() {
 # 標準コマンドをモダンツールに置き換え
 alias ls="eza -l --git --icons"
 alias ll="eza -la --git --icons"
-alias cat="bat"
+alias cat="bat --style=header,grid"
 
 # 42Tokyo - コンパイラフラグ・Norminette
 alias wcc="cc -Wall -Wextra -Werror"
@@ -41,6 +41,9 @@ alias pinact='go run github.com/suzuki-shunsuke/pinact/cmd/pinact@latest run'
 
 # ghq + fzf - リポジトリ移動widget起動
 alias repo='ghq-fzf-widget'
+
+# ghq + fzf - リポジトリをブラウザで開く
+alias ghv='ghq-fzf-view'
 
 # ===== 関数 =====
 
@@ -62,8 +65,8 @@ ghq-fzf-widget() {
     fi
 }
 
-# ghb - ghqリポジトリをブラウザで開く
-ghb() {
+# ghq-fzf-view - ghqリポジトリをブラウザで開く
+ghq-fzf-view() {
     local src
     src=$(ghq-fzf-select) || return
     if [[ -n "$src" ]]; then
@@ -100,12 +103,12 @@ minify_video() {
     if ffmpeg -i "$file_path" -vcodec libx264 -crf 23 "$output_file"; then
         echo "\nCompression completed!"
 
-        read -q "REPLY?Delete original file? (y/N): "
+        read -q "?Delete original file? (y/N): "
         echo
 
         if [[ $REPLY == "y" ]]; then
             rm "$file_path"
-            echo "%F{green}✓ Successfully deleted:%f $file_path"
+            echo "\033[32m✓ Successfully deleted:\033[0m $file_path"
         fi
     else
         echo "Error: Compression failed"
