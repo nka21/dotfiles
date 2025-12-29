@@ -23,6 +23,8 @@ jobs:
 
       - name: Setup aqua
         uses: aquaproj/aqua-installer@11dd79b4e498d471a9385aa9fb7f62bb5f52a73c # v4.0.4
+        with:
+          aqua_version: v2.56.1
 
       - name: Install security tools
         run: aqua i -l gitleaks zizmor
@@ -47,6 +49,8 @@ jobs:
 
       - name: Setup aqua
         uses: aquaproj/aqua-installer@11dd79b4e498d471a9385aa9fb7f62bb5f52a73c # v4.0.4
+        with:
+          aqua_version: v2.56.1
 
       - name: Install actions tools
         run: aqua i -l actionlint pinact
