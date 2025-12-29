@@ -74,6 +74,9 @@ mise install
 echo "Installing aqua tools (gh, ghq, eza, bat, fzf, act, sheldon)..."
 aqua install -a
 
+echo "Generating sheldon lock file..."
+sheldon lock
+
 echo ""
 echo "========================================="
 echo "  Setup Complete!"
