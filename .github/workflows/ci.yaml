@@ -70,6 +70,7 @@ jobs:
       - name: Run pinact and auto-fix
         env:
           GH_TOKEN: ${{ steps.bot.outputs.token }}
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }}
         run: |
           pinact run
           if git diff --quiet; then
@@ -79,4 +80,4 @@ jobs:
 
           git add .github/workflows/
           git commit -m "chore(ci): pin GitHub Actions to commit SHA"
-          git push origin HEAD:${{ github.head_ref || github.ref_name }}
+          git push origin "HEAD:${BRANCH_NAME}"
