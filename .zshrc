@@ -24,33 +24,31 @@ precmd() {
 
 # ===== エイリアス =====
 
-# 標準コマンドをモダンツールに置き換え
+# モダンツール
 alias ls="eza -l --git --icons"
 alias ll="eza -la --git --icons"
 alias cat="bat --style=header,grid"
 
-# 42Tokyo - コンパイラフラグ・Norminette
+# 42Tokyo
 alias wcc="cc -Wall -Wextra -Werror"
 alias wg++="g++ -Wall -Wextra -Werror"
 alias norm="norminette -R CheckDefine"
 alias francinette=/Users/naoki/francinette/tester.sh
 alias paco=/Users/naoki/francinette/tester.sh
 
-# GitHub Actions - バージョン固定ツール
+# GitHub Actions
 alias pinact='go run github.com/suzuki-shunsuke/pinact/cmd/pinact@latest run'
 
-# AtCoder - online-judge-tools (Go)
+# AtCoder
 alias ojt='oj t -c "go run main.go"'
 
-# ghq + fzf - リポジトリ移動widget起動
+# ghq + fzf
 alias repo='ghq-fzf-widget'
-
-# ghq + fzf - リポジトリをブラウザで開く
 alias repov='ghq-fzf-view'
 
 # ===== 関数 =====
 
-# ghq-fzf-select - ghqリポジトリをfzfで選択（プレビュー付き）
+# ghq + fzf
 ghq-fzf-select() {
     ghq list | fzf \
         --reverse \
@@ -59,7 +57,6 @@ ghq-fzf-select() {
         --preview "eza -la --git --icons --color=always --no-permissions --no-user --no-time --no-filesize $(ghq root)/{}"
 }
 
-# ghq-fzf-widget - ghqリポジトリに移動
 ghq-fzf-widget() {
     local src
     src=$(ghq-fzf-select) || return
@@ -68,7 +65,6 @@ ghq-fzf-widget() {
     fi
 }
 
-# ghq-fzf-view - ghqリポジトリをブラウザで開く
 ghq-fzf-view() {
     local src
     src=$(ghq-fzf-select) || return
@@ -77,7 +73,7 @@ ghq-fzf-view() {
     fi
 }
 
-# acc - AtCoder CLI拡張（acc sy で確認なし提出）
+# AtCoder
 acc() {
     if [ "$1" = "sy" ]; then
         shift
@@ -87,7 +83,7 @@ acc() {
     fi
 }
 
-# minify_video - 動画圧縮（完了後に元ファイル削除確認）
+# ffmpeg
 minify_video() {
     if [ -z "$1" ]; then
         echo "Usage: minify_video <video_file>"
@@ -119,7 +115,7 @@ minify_video() {
     fi
 }
 
-# man - マニュアルのカラー表示
+# man
 man() {
     env GROFF_NO_SGR=1 LESS_TERMCAP_mb=$'\E[01;31m' \
     LESS_TERMCAP_md=$'\E[01;38;5;74m' \
@@ -138,5 +134,5 @@ setopt no_beep
 
 # ===== プラグイン =====
 
-# sheldon - zshプラグインマネージャー
+# sheldon
 eval "$(sheldon source)"
