@@ -39,6 +39,9 @@ alias paco=/Users/naoki/francinette/tester.sh
 # GitHub Actions - バージョン固定ツール
 alias pinact='go run github.com/suzuki-shunsuke/pinact/cmd/pinact@latest run'
 
+# AtCoder - online-judge-tools (Go)
+alias ojt='oj t -c "go run main.go"'
+
 # ghq + fzf - リポジトリ移動widget起動
 alias repo='ghq-fzf-widget'
 
