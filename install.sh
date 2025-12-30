@@ -48,6 +48,7 @@ mkdir -p ~/.claude
 
 # Symlink home directory files
 ln -sf "$DOTFILES_DIR/.gitconfig" ~/.gitconfig
+ln -sf "$DOTFILES_DIR/.zshenv" ~/.zshenv
 ln -sf "$DOTFILES_DIR/.zshrc" ~/.zshrc
 ln -sf "$DOTFILES_DIR/.zprofile" ~/.zprofile
 
