@@ -9,5 +9,5 @@
 	save = stash save -u # メッセージ付きstash untrackedファイル含
 	see = !gh repo view --web # 該当リポジトリを開く
 	la = log --oneline --decorate --graph --branches --tags --remotes --all
-	delete-merged-branch = "!git switch \"$1\" && git for-each-ref --merged \"$1\" --format='%(refname:short)' refs/heads/ | grep -Ev '^(main|develop|master)$' | xargs -r git branch -d"
+	gone = "!git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -D"
 	aliases = !git config --get-regexp alias | sed 's/^alias.//g' | sed 's/ / = /1'
