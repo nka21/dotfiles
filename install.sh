@@ -30,7 +30,7 @@ fi
 # Install aqua if not installed
 if ! command -v aqua &> /dev/null; then
     echo "Installing aqua..."
-    brew install aquaproj/aqua/aqua
+    brew install aqua
 else
     echo "✓ aqua found"
 fi
