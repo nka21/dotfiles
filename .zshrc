@@ -26,7 +26,7 @@ precmd() {
 
 # モダンツール
 alias ls="eza -l --git --icons"
-alias ll="eza -la --git --icons"
+alias la="eza -la --git --icons"
 alias cat="bat --style=header,grid"
 
 # 42Tokyo
