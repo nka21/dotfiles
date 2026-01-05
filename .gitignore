@@ -1,3 +1,6 @@
 # Local git config with personal information
 .gitconfig.local
 alacritty/alacritty
+
+# Sheldon lock file contains environment-specific paths
+sheldon/plugins.lock
