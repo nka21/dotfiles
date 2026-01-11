@@ -73,16 +73,6 @@ ghq-fzf-view() {
     fi
 }
 
-# AtCoder
-acc() {
-    if [ "$1" = "sy" ]; then
-        shift
-        acc submit -s -- -y "$@"
-    else
-        command acc "$@"
-    fi
-}
-
 # ffmpeg
 minify_video() {
     if [ -z "$1" ]; then
