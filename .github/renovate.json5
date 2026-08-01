@@ -25,5 +25,18 @@
   "branchConcurrentLimit": 0,
 
   // ラベル付け
-  "labels": ["dependencies", "renovate"]
+  "labels": ["dependencies", "renovate"],
+
+  // aqua-installer の aqua_version は標準マネージャーの対象外なので regex で拾う
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^\\.github/workflows/.+\\.yaml$/"],
+      "matchStrings": [
+        "aqua_version:\\s*(?<currentValue>\\S+)\\s*# Renovate: depName=(?<depName>\\S+)"
+      ],
+      "datasourceTemplate": "github-releases",
+      "versioningTemplate": "semver"
+    }
+  ]
 }
