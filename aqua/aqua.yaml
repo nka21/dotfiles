@@ -6,7 +6,7 @@ checksum:
 
 registries:
   - type: standard
-    ref: v4.446.0 # Renovate: depName=aquaproj/aqua-registry
+    ref: v4.545.0 # Renovate: depName=aquaproj/aqua-registry
 
 packages:
   - import: imports/*.yaml
