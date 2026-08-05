@@ -29,7 +29,12 @@ ONLY from this prompt.
    issue exists in context — the diff alone may not show the full picture
 3. Apply the focus areas from your persona to prioritize what to check
 4. Apply the cross-cutting checklist
-5. Report only real issues, not preferences or style nits
+5. Report every issue you find, including ones you are uncertain about or
+   consider low-severity. Do not filter for importance or confidence at this
+   stage — a separate defense step (the consolidator) verifies and filters
+   downstream. Your goal here is coverage: it is better to surface a finding
+   that later gets rejected than to silently drop a real bug. Style
+   preferences and nits remain out of scope.
 
 ## Rules
 
@@ -39,8 +44,9 @@ ONLY from this prompt.
 - **DO verify**: Read the actual source file before reporting. Mark each
   finding as Verified (Yes / No / N/A). If the file was deleted in this diff,
   mark Verified: N/A.
-- **Max 5 findings** — prioritize by severity. If you find more than 5, keep
-  only the most impactful.
+- **Max 7 findings** — if you exceed this, keep the highest-severity ones and
+  end with a note: `N additional findings omitted.` so the consolidator knows
+  coverage was capped.
 - **Be specific**: Include exact file paths and line numbers. Vague findings
   are not actionable.
 
