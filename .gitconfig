@@ -14,3 +14,9 @@
 
 [fetch]
 	prune = true
+[gpg]
+	format = ssh
+[user]
+	signingkey = /Users/naoki/.ssh/id_ed25519.pub
+[commit]
+	gpgsign = true
