@@ -1,19 +1,31 @@
 ---
 name: git-worktree
-description: Create an isolated git worktree for a task — either before starting work (clean slate) or after uncommitted changes exist (rescue mode). Always use this before implementing any non-trivial change to prevent work from mixing on the current branch.
+description: Create an isolated git worktree when work must run in parallel with other in-progress work — either before starting a task (clean slate) or after uncommitted changes exist (rescue mode). Use [[git-branch]] instead for ordinary single-task work; reach for this only when a second, independent line of work needs to proceed concurrently in its own directory.
 user-invocable: true
 allowed-tools: Bash
 ---
 
-Create a git worktree so that work stays isolated on its own branch and never
-mixes with other changes on the current branch.
+Create a git worktree so that work stays isolated on its own branch, in its
+own directory, and never mixes with other changes on the current branch.
 
 ## When to use
+
+Use this only when work needs to happen **concurrently** with something else
+already in progress — e.g. an urgent fix must be worked on while another task
+is mid-flight, or multiple agents/tasks need to edit the repo at the same
+time. A worktree gives each line of work its own directory so they don't
+collide.
+
+For ordinary, single-threaded work — the common case — use `git-branch`
+instead: create a branch and edit in place. Don't reach for a worktree just
+because a change is large or non-trivial; size and risk alone aren't a
+parallelism need.
 
 - **Before starting implementation** (preferred): invoke this first, then do
   all editing inside the worktree.
 - **After uncommitted changes exist** (rescue mode): moves changes out of the
-  current branch into a clean worktree.
+  current branch into a clean worktree — typically because a second task now
+  needs the current branch/directory free to work in parallel.
 
 ## Step 1: Detect mode
 
