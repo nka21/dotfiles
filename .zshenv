@@ -4,6 +4,9 @@
 # Local bin
 export PATH="$HOME/.local/bin:$PATH"
 
+# mise
+export PATH="$HOME/.local/share/mise/shims:$PATH"
+
 # aqua
 export PATH="$HOME/.local/share/aquaproj-aqua/bin:$PATH"
 export AQUA_ROOT_DIR="$HOME/.local/share/aquaproj-aqua"
