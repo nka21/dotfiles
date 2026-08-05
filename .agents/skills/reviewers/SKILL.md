@@ -1,6 +1,6 @@
 ---
 name: reviewers
-description: "Multi-agent code review with dynamic personas and confidence-scored findings. Spawns 2-4 reviewers tailored to the diff, then a defender/consolidator (Opus) that verifies each finding against source and explains every adoption and rejection decision."
+description: "Multi-agent code review with dynamic personas and confidence-scored findings. Spawns 2-4 reviewers tailored to the diff, then a defender/consolidator (Fable) that verifies each finding against source and explains every adoption and rejection decision."
 argument-hint: "[path or file filter]"
 user-invocable: true
 allowed-tools: "Agent Bash Read Glob Grep"
@@ -48,6 +48,17 @@ git diff $(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/
 Follow these steps exactly. Emit the step header before each step so the user
 can track progress.
 
+### Model assignment
+
+Use model aliases (not dated IDs) so each step automatically tracks the
+latest model in its tier:
+
+| Step | Agent(s)       | Model    | Why                                                        |
+|------|----------------|----------|------------------------------------------------------------|
+| 1    | focus-analyzer | `sonnet` | Persona design shapes the whole review — worth more than a triage-tier model; still a single cheap call |
+| 2    | reviewers ×N   | `opus`   | Strongest code-review precision and recall for the finding stage |
+| 3    | consolidator   | `fable`  | Verification/defense is the quality gate — use the most capable model |
+
 ---
 
 ### Step 1: Focus Analysis
@@ -56,7 +67,7 @@ Emit: `### Step 1/3 — Focus Analysis`
 
 Read `agents/focus-analyzer.md` before launching this agent.
 
-Launch **1 agent** (model: haiku) with:
+Launch **1 agent** (model: sonnet) with:
 - The prompt from `agents/focus-analyzer.md`
 - The diff stat output shown above
 - The recent commits shown above
@@ -81,7 +92,8 @@ before launching reviewers.
 
 Determine N = the number of personas from Step 1 (minimum 2, maximum 4).
 
-Launch **N pr-reviewer agents in a single message** (parallel execution).
+Launch **N pr-reviewer agents in a single message** (parallel execution,
+model: opus).
 
 Each reviewer receives:
 - The base prompt from `agents/reviewer.md`
@@ -128,7 +140,7 @@ Emit: `### Step 3/3 — Consolidated Review`
 
 Read `agents/consolidator.md` and `examples/output-format.md` before launching.
 
-Launch **1 general-purpose agent** (model: opus) with:
+Launch **1 general-purpose agent** (model: fable) with:
 - The prompt from `agents/consolidator.md`
 - The output format from `examples/output-format.md`
 - All reviewer results from Step 2
