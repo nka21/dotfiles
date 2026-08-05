@@ -4,7 +4,7 @@
 # Local bin
 export PATH="$HOME/.local/bin:$PATH"
 
-# mise (shims経由で非対話シェルでもツールを使えるようにする)
+# mise
 export PATH="$HOME/.local/share/mise/shims:$PATH"
 
 # aqua
